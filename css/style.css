@@ -1,25 +1,309 @@
+.button-animation-1::before,
+.button-animation-1::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.button-animation-1::before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+.button-animation-1::after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: 0s ease opacity .4s, .2s ease width , .2s ease height .2s;
+}
+.button-animation-1:hover::before,
+.button-animation-1:hover::after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.button-animation-1:hover::before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+.button-animation-1:hover::after {
+  transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;
+}
 body {
   margin: 0;
   font-family: sans-serif;
+  font-size: 14px;
   color: #6D6F70;
 }
 .background-block {
   display: flex;
-  align-items: center;
+  min-width: 320px;
+  width: 100%;
   height: 100vh;
   background-color: #CECECE;
 }
 .background-block .sign {
-  padding: 5px 5px 20px 20px;
-  margin: 0 auto;
+  width: 45%;
+  margin: auto;
   background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+.background-block .sign:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+@media all and (max-width: 1248px) {
+  .background-block .sign {
+    width: 48%;
+  }
+}
+@media all and (max-width: 1170px) {
+  .background-block .sign {
+    width: 50%;
+  }
+}
+@media all and (max-width: 1030px) {
+  .background-block .sign {
+    width: 55%;
+  }
+}
+@media all and (max-width: 900px) {
+  .background-block .sign {
+    width: 60%;
+  }
+}
+@media all and (max-width: 850px) {
+  .background-block .sign {
+    width: 65%;
+  }
+}
+@media all and (max-width: 800px) {
+  .background-block .sign {
+    width: 70%;
+  }
+}
+@media all and (max-width: 750px) {
+  .background-block .sign {
+    width: 75%;
+  }
+}
+@media all and (max-width: 700px) {
+  .background-block .sign {
+    width: 80%;
+  }
+}
+@media all and (max-width: 650px) {
+  .background-block .sign {
+    width: 85%;
+  }
+}
+@media all and (max-width: 600px) {
+  .background-block .sign {
+    width: 90%;
+  }
+}
+@media all and (max-width: 650px) {
+  .background-block .sign {
+    width: 95%;
+  }
+}
+.background-block h1,
+.background-block h2 {
+  font-weight: normal;
+}
+.background-block h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 1.9em;
+}
+.background-block h2 {
+  margin-bottom: 0;
+  font-size: 1.5em;
+  color: #292929;
+}
+@media all and (max-width: 1241px) {
+  .background-block h2 {
+    font-size: 1.4em;
+  }
+}
+@media all and (max-width: 1164px) {
+  .background-block h2 {
+    font-size: 1.3em;
+  }
+}
+.background-block p {
+  font-size: 1.1em;
+}
+.background-block a {
+  text-decoration: none;
+  color: #6D6F70;
+  transition: all .5s ease;
+}
+.background-block a:hover {
+  font-size: 1.05em;
+}
+.background-block .button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  font-size: 1em;
+  color: white;
+}
+.background-block .button::before,
+.background-block .button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.background-block .button::before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+.background-block .button::after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: 0s ease opacity .4s, .2s ease width , .2s ease height .2s;
+}
+.background-block .button:hover::before,
+.background-block .button:hover::after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.background-block .button:hover::before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+.background-block .button:hover::after {
+  transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;
 }
 .close {
   text-align: right;
+  padding: 10px;
 }
 .close img {
   width: 10px;
   padding: 8px;
   border-radius: 50%;
   background-color: #C0C0C0;
+  transition: box-shadow 0.3s ease;
+}
+.close img:hover {
+  background-color: #6D6F6F;
+}
+.wrap {
+  padding: 0 40px 20px 40px;
+}
+.flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+.flex-container .flex-block {
+  width: 47%;
+}
+.flex-container .flex-block:first-child {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.flex-container .flex-block:first-child span {
+  display: block;
+}
+.sign-with-facebook .facebook {
+  background: #4F619A;
+}
+.sign-with-facebook .facebook img {
+  width: 17px;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+.sign-with-facebook .facebook:hover {
+  background: #3F4C78;
+  font-size: 1em;
+}
+.sign-with-facebook span {
+  display: inline-block;
+  width: 90%;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+.sign-in input[type='text'] {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 25px;
+  border: 1px solid #C0C0C0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.sign-in input[type='text'].error {
+  border: 1px solid crimson;
+}
+.sign-in a,
+.sign-in span {
+  font-size: 0.8em;
+}
+.sign-in span {
+  vertical-align: middle;
+  font-weight: bold;
+  color: #292929;
+}
+.sign-in div {
+  float: right;
+}
+.sign-in div::after {
+  clear: both;
+}
+.sign-in div input[type='checkbox'] {
+  vertical-align: middle;
+}
+.sign-in .send {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #6D6F6F;
+}
+.sign-in .send:hover {
+  background: #575858;
+  font-size: 1em;
+}
+.sign-in .error-message {
+  font-size: 0.8em;
+  color: crimson;
+}
+@media all and (max-width: 550px) {
+  .background-block .sign {
+    width: 100%;
+    height: 100vh;
+  }
+  .background-block h1 {
+    font-size: 1.5em;
+  }
+  .flex-container {
+    flex-flow: column nowrap;
+  }
+  .flex-container .flex-block {
+    width: 100%;
+  }
+  .flex-container .flex-block:first-child {
+    order: 1;
+  }
 }

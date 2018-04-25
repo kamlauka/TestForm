@@ -5,30 +5,281 @@
 @color-font-light: #6D6F70;
 @color-font-dark: #292929;
 
+.button-animation-1 {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+  }
+  &::before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+  }
+  &::after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: 0s ease opacity .4s, .2s ease width , .2s ease height .2s;
+  }
+  &:hover::before,
+  &:hover::after{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+  &:hover::before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+  }
+  &:hover::after {
+    transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;
+  }
+}
+
+
 body {
   margin: 0;
   font-family: sans-serif;
+  font-size: 14px;
   color: @color-font-light;
 }
 
 .background-block {
+
   display: flex;
-  align-items: center;
+  min-width: 320px;
+  width: 100%;
   height: 100vh;
   background-color: @color-background;
   .sign {
-    padding: 5px 5px 20px 20px;
-    margin: 0 auto;
+    width: 45%;
+    margin: auto;
     background-color: white;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    }
+    @media all and (max-width: 1248px) {
+      width: 48%;
+    }
+    @media all and (max-width: 1170px) {
+      width: 50%;
+    }
+    @media all and (max-width: 1030px) {
+      width: 55%;
+    }
+    @media all and (max-width: 900px) {
+      width: 60%;
+    }
+    @media all and (max-width: 850px) {
+      width: 65%;
+    }
+    @media all and (max-width: 800px) {
+      width: 70%;
+    }
+    @media all and (max-width: 750px) {
+      width: 75%;
+    }
+    @media all and (max-width: 700px) {
+      width: 80%;
+    }
+    @media all and (max-width: 650px) {
+      width: 85%;
+    }
+    @media all and (max-width: 600px) {
+      width: 90%;
+    }
+    @media all and (max-width: 650px) {
+      width: 95%;
+    }
+  }
+  h1, h2 {
+    font-weight: normal;
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 1.9em;
+  }
+  h2 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+    color: @color-font-dark;
+    @media all and (max-width: 1241px) {
+      font-size: 1.4em;
+    }
+    @media all and (max-width: 1164px) {
+      font-size: 1.3em;
+    }
+  }
+  p {
+    font-size: 1.1em;
+  }
+  a {
+    text-decoration: none;
+    color: @color-font-light;
+    transition: all .5s ease;
+    &:hover {
+      font-size: 1.05em;
+    }
+  }
+  .button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    font-size: 1em;
+    color: white;
+    .button-animation-1;
   }
 }
 
+
+
 .close {
   text-align: right;
+  padding: 10px;
   img {
     width:10px;
     padding: 8px;
     border-radius: 50%;
     background-color: @color-additional-1;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      background-color: @color-additional-2;
+    }
   }
 }
+.wrap {
+  padding: 0 40px 20px 40px;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-top: 5px;
+  .flex-block {
+    width: 47%;
+    &:first-child {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.sign-with-facebook {
+  .facebook {
+    background: @color-facebook;
+    img {
+      width: 17px;
+      margin-right: 14px;
+      vertical-align: middle;
+    }
+    &:hover {
+      background: #3F4C78;
+      font-size: 1em;
+
+    }
+  }
+  span {
+    display: inline-block;
+    width: 90%;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 0.8em;
+  }
+}
+
+.sign-in {
+  input[type= 'text'] {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 25px;
+    border: 1px solid @color-additional-1;
+    box-sizing: border-box;
+    font-size: 1em;
+    &.error {
+      border: 1px solid crimson;
+    }
+  }
+  a, span {
+    font-size: 0.8em;
+  }
+  span {
+    vertical-align: middle;
+    font-weight: bold;
+    color: @color-font-dark;
+  }
+  div {
+    float: right;
+    &::after {
+      clear: both;
+    }
+    input[type= 'checkbox'] {
+      vertical-align: middle;
+    }
+  }
+  .send {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: @color-additional-2;
+    &:hover {
+      background: #575858;
+      font-size: 1em;
+
+    }
+  }
+
+  .error-message {
+    font-size: 0.8em;
+    color: crimson;
+  }
+}
+
+
+@media all and (max-width: 550px) {
+
+  .background-block  {
+    .sign {
+      width: 100%;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+
+  .flex-container {
+    flex-flow: column nowrap;
+    .flex-block {
+      width: 100%;
+      &:first-child {
+        order: 1;
+      }
+    }
+  }
+}
+
+
+
+
+

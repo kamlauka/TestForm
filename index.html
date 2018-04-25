@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>$Title$</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,30 +12,39 @@
             <div class="close">
                 <img src="images/cancel.svg" alt="Cancel">
             </div>
-            <h1>Вход в ваш кабинет</h1>
-            <p></p>
-            <form action="">
-                <div class="sign-with-facebook">
-                    <input type="button">
-                    <span></span>
-                </div>
-                <div class="sign-up">
-                    <h2></h2>
-                    <a href="#"></a>
-                </div>
-                <div class="sign-in">
-                    <input type="text">
-                    <input type="text">
-                    <div>
-                        <a href="#"></a>
-                        <input type="checkbox">
-                        <input type="button">
+            <div class="wrap">
+                <h1>Вход в ваш кабинет</h1>
+                <p>Сохранить Ваши избранные объекты и многое другое</p>
+                <form name="sign"  class="flex-container">
+                    <div class="flex-block">
+                        <div class="sign-with-facebook">
+                            <a href="#" class="button facebook">
+                                <img src="images/facebook.svg" alt="Facebook">
+                                Войти с Facebook
+                            </a>
+                            <span>Мы никогда ничего не размещаем без Вашего разрешения</span>
+                        </div>
+                        <div>
+                            <h2>Нет личного кабинета?</h2>
+                            <a href="#">Зарегистрируйтесь</a>
+                            <span>&nbsp</span>
+                        </div>
                     </div>
-                </div>
-                
-
-            </form>
+                    <div class="flex-block sign-in">
+                        <input type="text" name="email" placeholder="Адрес электронной почты *">
+                        <input type="text" name="password" placeholder="Пароль *">
+                        <a href="#">Забыли пароль?</a>
+                        <div>
+                            <input type="checkbox" checked>
+                            <span>Remember me</span>
+                        </div>
+                        <a href="#" name="submit" class="button send" onclick="var form = document.forms.sign; validate(form)">Войти</a>
+                        <span class="error-message">&nbsp</span>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
