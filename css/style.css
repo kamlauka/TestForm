@@ -48,7 +48,7 @@ body {
 }
 .background-block .sign {
   width: 45%;
-  margin: auto;
+ max-width: 660px;  margin: auto;
   background-color: white;
   transition: box-shadow 0.3s ease;
 }
